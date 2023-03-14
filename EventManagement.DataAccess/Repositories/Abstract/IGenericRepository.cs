@@ -9,6 +9,6 @@ namespace EventManagement.DataAccess.Repositories.Abstract;
 public interface IGenericRepository<Entity> where Entity : class
 {
     Task Insert(Entity entity);
-    List<Entity> GetAll();
-    Entity GetById(int id);
+    Task<List<Entity>> GetAll();
+    Task<Entity> GetById(int id);
 }

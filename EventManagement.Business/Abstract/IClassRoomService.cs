@@ -10,6 +10,6 @@ namespace EventManagement.Business.Abstract;
 public interface IClassRoomService
 {
     Task Insert(ClassRoom classRoom);
-    List<ClassRoom> GetAll();
-    ClassRoom GetById(int id);
+    Task<List<ClassRoom>> GetAll();
+    Task<ClassRoom> GetById(int id);
 }

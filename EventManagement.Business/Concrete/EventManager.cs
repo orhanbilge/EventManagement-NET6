@@ -18,14 +18,14 @@ public class EventManager : IEventService
         _repository = repository;
     }
 
-    public List<Event> GetAll()
+    public async Task<List<Event>> GetAll()
     {
-        throw new NotImplementedException();
+        return await _repository.GetAll();
     }
 
-    public Event GetById(int id)
+    public async Task<Event> GetById(int id)
     {
-        throw new NotImplementedException();
+        return await _repository.GetById(id);
     }
 
     public async Task Insert(Event @event)

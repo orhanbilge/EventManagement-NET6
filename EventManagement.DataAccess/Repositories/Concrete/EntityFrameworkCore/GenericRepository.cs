@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EventManagement.DataAccess.Contexts;
 using EventManagement.DataAccess.Repositories.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace EventManagement.DataAccess.Repositories.Concrete.EntityFrameworkCore;
 
@@ -17,14 +18,14 @@ public class GenericRepository<Entity> : IGenericRepository<Entity> where Entity
         _context = dbContext;
     }
 
-    public List<Entity> GetAll()
+    public async Task<List<Entity>> GetAll()
     {
-        return _context.Set<Entity>().ToList();
+        return await _context.Set<Entity>().ToListAsync();
     }
 
-    public Entity GetById(int id)
+    public async Task<Entity> GetById(int id)
     {
-        throw new NotImplementedException();
+        return await _context.Set<Entity>().FindAsync(id);
     }
 
     public async Task Insert(Entity entity)

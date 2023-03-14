@@ -18,14 +18,14 @@ public class TeacherManager : ITeacherService
         _repository = repository;
     }
 
-    public List<Teacher> GetAll()
+    public async Task<List<Teacher>> GetAll()
     {
-        return _repository.GetAll();
+        return await _repository.GetAll();
     }
 
-    public Teacher GetById(int id)
+    public async Task<Teacher> GetById(int id)
     {
-        throw new NotImplementedException();
+        return await _repository.GetById(id);
     }
 
     public async Task Insert(Teacher teacher)

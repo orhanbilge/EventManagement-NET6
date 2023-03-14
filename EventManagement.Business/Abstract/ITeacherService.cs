@@ -10,6 +10,6 @@ namespace EventManagement.Business.Abstract;
 public interface ITeacherService
 {
     Task Insert(Teacher teacher);
-    List<Teacher> GetAll();
-    Teacher GetById(int id);
+    Task<List<Teacher>> GetAll();
+    Task<Teacher> GetById(int id);
 }

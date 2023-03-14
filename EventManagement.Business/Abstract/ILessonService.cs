@@ -10,6 +10,6 @@ namespace EventManagement.Business.Abstract;
 public interface ILessonService
 {
     Task Insert(Lesson lesson);
-    List<Lesson> GetAll();
-    Lesson GetById(int id);
+    Task<List<Lesson>> GetAll();
+    Task<Lesson> GetById(int id);
 }

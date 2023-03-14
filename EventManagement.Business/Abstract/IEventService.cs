@@ -10,6 +10,6 @@ namespace EventManagement.Business.Abstract;
 public interface IEventService
 {
     Task Insert(Event @event);
-    List<Event> GetAll();
-    Event GetById(int id);
+    Task<List<Event>> GetAll();
+    Task<Event> GetById(int id);
 }

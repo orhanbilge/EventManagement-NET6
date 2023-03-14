@@ -18,14 +18,14 @@ public class ClassRoomManager : IClassRoomService
         _repository = repository;
     }
 
-    public List<ClassRoom> GetAll()
+    public async Task<List<ClassRoom>> GetAll()
     {
-        return _repository.GetAll();
+        return await _repository.GetAll();
     }
 
-    public ClassRoom GetById(int id)
+    public async Task<ClassRoom> GetById(int id)
     {
-        throw new NotImplementedException();
+        return await _repository.GetById(id);
     }
 
     public async Task Insert(ClassRoom classRoom)

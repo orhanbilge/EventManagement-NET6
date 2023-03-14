@@ -18,14 +18,14 @@ public class LessonManager : ILessonService
         _repository = repository;
     }
 
-    public List<Lesson> GetAll()
+    public async Task<List<Lesson>> GetAll()
     {
-        throw new NotImplementedException();
+        return await _repository.GetAll();
     }
 
-    public Lesson GetById(int id)
+    public async Task<Lesson> GetById(int id)
     {
-        throw new NotImplementedException();
+        return await _repository.GetById(id);
     }
 
     public async Task Insert(Lesson lesson)

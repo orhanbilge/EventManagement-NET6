@@ -17,20 +17,23 @@ public class TeacherController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Teacher> Get()
+    public async Task<IActionResult> GetAll()
     {
-        return _teacherManager.GetAll();
+        var result = await _teacherManager.GetAll();
+        return Ok(result);
     }
 
     [HttpGet("{id}")]
-    public string Get(int id)
+    public async Task<IActionResult> GetById(int id)
     {
-        return "value";
+        var result = await _teacherManager.GetById(id);
+        return Ok(result);
     }
 
     [HttpPost]
-    public async Task PostAsync(Teacher teacher)
+    public async Task<IActionResult> PostAsync(Teacher teacher)
     {
         await _teacherManager.Insert(teacher);
+        return Ok(teacher);
     }
 }
