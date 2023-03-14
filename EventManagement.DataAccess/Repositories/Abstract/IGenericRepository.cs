@@ -8,7 +8,7 @@ namespace EventManagement.DataAccess.Repositories.Abstract;
 
 public interface IGenericRepository<Entity> where Entity : class
 {
-    void Insert(Entity entity);
+    Task Insert(Entity entity);
     List<Entity> GetAll();
     Entity GetById(int id);
 }

@@ -20,7 +20,7 @@ public class TeacherManager : ITeacherService
 
     public List<Teacher> GetAll()
     {
-        throw new NotImplementedException();
+        return _repository.GetAll();
     }
 
     public Teacher GetById(int id)
@@ -28,8 +28,8 @@ public class TeacherManager : ITeacherService
         throw new NotImplementedException();
     }
 
-    public void Insert(Teacher teacher)
+    public async Task Insert(Teacher teacher)
     {
-        throw new NotImplementedException();
+        await _repository.Insert(teacher);
     }
 }

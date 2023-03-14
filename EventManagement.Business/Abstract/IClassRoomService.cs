@@ -9,7 +9,7 @@ namespace EventManagement.Business.Abstract;
 
 public interface IClassRoomService
 {
-    void Insert(ClassRoom classRoom);
+    Task Insert(ClassRoom classRoom);
     List<ClassRoom> GetAll();
     ClassRoom GetById(int id);
 }

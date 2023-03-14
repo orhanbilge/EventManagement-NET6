@@ -9,7 +9,7 @@ namespace EventManagement.Business.Abstract;
 
 public interface ILessonService
 {
-    void Insert(Lesson lesson);
+    Task Insert(Lesson lesson);
     List<Lesson> GetAll();
     Lesson GetById(int id);
 }

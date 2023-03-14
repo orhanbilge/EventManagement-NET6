@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventManagement.DataAccess.Contexts;
 using EventManagement.DataAccess.Repositories.Abstract;
 
 namespace EventManagement.DataAccess.Repositories.Concrete.EntityFrameworkCore;
 
 public class GenericRepository<Entity> : IGenericRepository<Entity> where Entity : class
 {
+    readonly AppDbContext _context;
+
+    public GenericRepository(AppDbContext dbContext)
+    {
+        _context = dbContext;
+    }
+
     public List<Entity> GetAll()
     {
-        throw new NotImplementedException();
+        return _context.Set<Entity>().ToList();
     }
 
     public Entity GetById(int id)
@@ -19,8 +27,9 @@ public class GenericRepository<Entity> : IGenericRepository<Entity> where Entity
         throw new NotImplementedException();
     }
 
-    public void Insert(Entity entity)
+    public async Task Insert(Entity entity)
     {
-        throw new NotImplementedException();
+        _ = _context.Set<Entity>().AddAsync(entity);
+        await _context.SaveChangesAsync();
     }
 }

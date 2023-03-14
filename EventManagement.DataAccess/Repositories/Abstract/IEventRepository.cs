@@ -7,6 +7,6 @@ using EventManagement.Entity;
 
 namespace EventManagement.DataAccess.Repositories.Abstract;
 
-public interface IEventRepository
+public interface IEventRepository : IGenericRepository<Event>
 {
 }

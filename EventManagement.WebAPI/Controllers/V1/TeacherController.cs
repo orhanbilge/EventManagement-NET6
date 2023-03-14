@@ -9,7 +9,7 @@ namespace EventManagement.WebAPI.Controllers.V1;
 [ApiController]
 public class TeacherController : ControllerBase
 {
-    readonly ITeacherService _teacherManager;
+    private readonly ITeacherService _teacherManager;
 
     public TeacherController(ITeacherService teacherService)
     {
@@ -29,7 +29,8 @@ public class TeacherController : ControllerBase
     }
 
     [HttpPost]
-    public void Post([FromBody] string value)
+    public async Task PostAsync(Teacher teacher)
     {
+        await _teacherManager.Insert(teacher);
     }
 }

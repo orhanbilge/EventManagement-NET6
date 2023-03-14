@@ -4,12 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EventManagement.Business.Abstract;
+using EventManagement.DataAccess.Repositories.Abstract;
 using EventManagement.Entity;
 
 namespace EventManagement.Business.Concrete;
 
 public class LessonManager : ILessonService
 {
+    readonly ILessonRepository _repository;
+
+    public LessonManager(ILessonRepository repository)
+    {
+        _repository = repository;
+    }
+
     public List<Lesson> GetAll()
     {
         throw new NotImplementedException();
@@ -20,8 +28,8 @@ public class LessonManager : ILessonService
         throw new NotImplementedException();
     }
 
-    public void Insert(Lesson lesson)
+    public async Task Insert(Lesson lesson)
     {
-        throw new NotImplementedException();
+        await _repository.Insert(lesson);
     }
 }

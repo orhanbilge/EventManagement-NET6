@@ -9,7 +9,7 @@ namespace EventManagement.Business.Abstract;
 
 public interface ITeacherService
 {
-    void Insert(Teacher teacher);
+    Task Insert(Teacher teacher);
     List<Teacher> GetAll();
     Teacher GetById(int id);
 }

@@ -11,16 +11,16 @@ namespace EventManagement.Business.Concrete;
 
 public class ClassRoomManager : IClassRoomService
 {
-    readonly IClassRoomRepository _classRoomRepository;
+    readonly IClassRoomRepository _repository;
 
-    public ClassRoomManager(IClassRoomRepository classRoomRepository)
+    public ClassRoomManager(IClassRoomRepository repository)
     {
-        _classRoomRepository = classRoomRepository;
+        _repository = repository;
     }
 
     public List<ClassRoom> GetAll()
     {
-        return _classRoomRepository.GetAll();
+        return _repository.GetAll();
     }
 
     public ClassRoom GetById(int id)
@@ -28,8 +28,8 @@ public class ClassRoomManager : IClassRoomService
         throw new NotImplementedException();
     }
 
-    public void Insert(ClassRoom classRoom)
+    public async Task Insert(ClassRoom classRoom)
     {
-        throw new NotImplementedException();
+        await _repository.Insert(classRoom);
     }
 }
