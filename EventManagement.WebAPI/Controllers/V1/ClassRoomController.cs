@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EventManagement.WebAPI.Controllers.V1;
 
 [ApiVersion("1.0")]
-[Route("api/v{version:apiVersion}/class")]
+[Route("api/v{version:apiVersion}/class-room")]
 [ApiController]
 public class ClassRoomController : ControllerBase
 {
