@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\V1\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\EventManagement.Business\EventManagement.Business.csproj" />
     <ProjectReference Include="..\EventManagement.DataAccess\EventManagement.DataAccess.csproj" />
     <ProjectReference Include="..\EventManagement.Entity\EventManagement.Entity.csproj" />
