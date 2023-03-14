@@ -8,4 +8,8 @@ namespace EventManagement.Entity;
 
 public class Event : BaseEntity
 {
+    public DateTime Date { get; set; }
+    public ClassRoom ClassRoom { get; set; }
+    public Lesson Lesson { get; set; }
+    public Teacher Teacher { get; set; }
 }
